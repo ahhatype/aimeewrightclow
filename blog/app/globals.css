@@ -45,6 +45,7 @@
   --color-plum-600: #cc00cc;
   --color-plum-700: #990099;
   --color-plum-800: #660066;
+  --color-plum-900: #330033;
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -86,7 +87,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: var(--color-plum-900);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
@@ -167,4 +168,14 @@
     @apply text-sludge-500;
     @apply font-semibold;
   }
+}
+
+@keyframes appear-dissolve {
+  0% { opacity: 0; transform: scale(0.95); }
+  15% { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.02); }
+}
+
+.animate-appear-dissolve {
+  animation: appear-dissolve 1.5s ease-out forwards;
 }

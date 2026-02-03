@@ -79,7 +79,17 @@ export default function RootLayout({
       <body
         className={`${libreBaskerville.variable} ${jetbrainsMono.variable} ${compagnon.variable} ${ruinaFlor.variable} ${ruinaFractura.variable} ${ruinaGermen.variable} ${ruinaRuina.variable} ${ruinaSemilla.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="flex min-h-screen flex-col">
+            <header aria-label="Page Header" className="w-full justify-end items-end sm:items-baseline gap-0 sm:gap-12 flex flex-col sm:flex-row my-4 lg:my-16 px-6 md:px-10 lg:px-12">
+              <h1 className="text-sm">Aimee Wright Clow</h1>
+              <p className="text-xs text-tangerine-500">is a writer, designer, and developer</p>
+            </header>
+            <main className="flex-1">
+              {children}
+            </main>
+          </div>
+        </Providers>
       </body>
     </html>
   );
